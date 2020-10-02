@@ -28,5 +28,14 @@ exports.max = function max(array) {
 };
 
 exports.avg = function avg(array) {
-    return 0;
+    if (arguments.length === 0 || arguments[0].length === 0) {
+        return 0;
+    }
+
+    let sum = array.reduce(
+        (accumulator, currentValue) => accumulator + currentValue
+    );
+    let avg = sum / array.length;
+
+    return avg;
 };
