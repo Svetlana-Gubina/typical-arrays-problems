@@ -14,7 +14,17 @@ exports.min = function min(array) {
 };
 
 exports.max = function max(array) {
-    return 0;
+    if (arguments.length === 0 || arguments[0].length === 0) {
+        return 0;
+    }
+
+    let max = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (!isNaN(array[i]) && array[i] > max) {
+            max = array[i];
+        }
+    }
+    return max;
 };
 
 exports.avg = function avg(array) {
